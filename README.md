@@ -1,15 +1,7 @@
-# Ubuntu
+# 完美世界
 
-This project provides a custom Docker image based on Ubuntu, designed to simulate a minimal VPS environment. It includes an SSH server enabled by default, allowing users to interact with the container just like a typical remote server. This setup is ideal for testing, development, or training purposes where a lightweight and easily reproducible virtual server is needed.
+《完美世界》，一部荡气回肠的东方玄幻史诗。故事以上古大荒为起点，构建出九天十地、仙域、异域交织的浩瀚世界。天生至尊骨的少年石昊，幼年遭劫被寄养石村，在柳神指引下逆天崛起。他从大荒走出，闯虚神界、战三千道州、平帝关血战，以 “他化自在，他化万古” 之能，一路披荆斩棘。历经黑暗动乱、界海浩劫，石昊最终证道仙帝，斩杀黑暗源头，一剑断万古，只身前往上苍之上，为众生守护出一方安宁天地。全书热血与悲壮交织，写尽少年逆袭、苍生大义与独断万古的孤勇传奇。
 
 ## Usage
 
-```bash
-docker run -d \
-  --name ubuntu \
-  -p 2222:22 \
-  -e SSH_USER=ubuntu \
-  -e SSH_PASSWORD='ubuntu!23' \
-  ghcr.io/vevc/ubuntu:25.7.14
-```
 
