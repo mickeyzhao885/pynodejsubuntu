@@ -1,5 +1,5 @@
 {
-  "name": "node-xhttp",
+  "name": "expressapp",
   "version": "1.0.0",
   "description": "nodejs",
   "author": "eooce",
@@ -13,6 +13,7 @@
     "debug": "LOG_LEVEL=debug node --expose-gc app.js"
   },
   "dependencies": {
+    "express": "^4.22.1",
     "axios": "^1.9.0"
   },
   "engines": {
