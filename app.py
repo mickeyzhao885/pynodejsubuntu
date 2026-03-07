@@ -61,8 +61,10 @@ class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
             # 仅针对 HEAD 请求返回 200 OK 状态码，不包含任何 Body
-            if self.method == 'HEAD':
-                return web.Response(status=200)
+            if self.command == 'HEAD':
+                self.send_response(200)
+                self.end_headers() # 必须调用，结束 HTTP 头
+                return             # 必须 return，防止继续执行后续的 GET 逻辑
                 
             self.send_response(200)
             self.send_header('Content-type', 'text/html; charset=utf-8')
@@ -81,11 +83,16 @@ class RequestHandler(BaseHTTPRequestHandler):
 
         elif self.path == '/healthz':
             # 仅针对 HEAD 请求返回 200 OK 状态码，不包含任何 Body
-            if self.method == 'HEAD':
-                return web.Response(status=200)
+            if self.command == 'HEAD':
+                self.send_response(200)
+                self.end_headers() # 必须调用，结束 HTTP 头
+                return             # 必须 return，防止继续执行后续的 GET 逻辑
 
             # 兼容性处理：防止某些运维工具偶尔发 GET 请求（可选）
-            return web.Response(text='OK', content_type='text/plain', status=200)
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html; charset=utf-8')
+            self.end_headers()
+            self.wfile.write(b'Make world Peace!')
         
         elif self.path == f'/{SUB_PATH}':
             try:
