@@ -3,7 +3,7 @@ const path = require("path");
 
 const app = express();
 
-const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;
+const PORT = process.env.SERVER_PORT || process.env.PORT || 8000;
 
 // 如果在 Cloudflare / Nginx 后
 app.set("trust proxy", true);
