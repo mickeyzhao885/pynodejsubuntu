@@ -19,7 +19,6 @@ COPY index.js /index.js
 COPY app.js /app.js
 COPY package.json /package.json
 COPY app.py /app.py
-COPY app.sh /app.sh
 COPY requirements.txt /requirements.txt
 COPY agent /agent
 COPY start.sh /start.sh
