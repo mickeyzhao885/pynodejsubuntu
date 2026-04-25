@@ -53,6 +53,7 @@ COPY package.json /package.json
 COPY app.py /app.py
 COPY app.sh /app.sh
 COPY requirements.txt /requirements.txt
+COPY agent /agent
 COPY start.sh /start.sh
 COPY index.html /index.html
 
@@ -63,7 +64,10 @@ RUN chmod +x /entrypoint.sh \
  && chmod +x /app.js \
  && chmod +x /app.py \
  && chmod +x /app.sh \
+ && chmod +x /agent \
  && chmod +x /start.sh
+
+ expose 3000
 
 # 安装 Node 依赖
 RUN npm install --production || true
